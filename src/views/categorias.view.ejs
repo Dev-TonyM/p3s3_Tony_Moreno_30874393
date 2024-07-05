@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>categorias</title>
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/categorias.css" rel="stylesheet">
+  </head>
+  <body>
+
+<%- include('header.ejs') %>
+
+<div class="container-fluid">
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Categorias</h1>
+    </div>
+    <div class="container-inventario">
+    
+        <table class="table table-bordered table-hover table-sm">
+            <thead class="text-white bg-dark shadow-sm">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <% categorias.forEach(categoria => { %>
+                <tr>
+                    <td><%= categoria.id %></td>
+                    <td><%= categoria.categoria %></td>
+                    <td>
+                        <a href="/categorias/editar/<%= categoria.id %>">Editar</a>
+                    </td>
+                    <td>
+                        <a href="/categorias/eliminar/<%= categoria.id %>">Borrar</a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/categorias/add" class="ntn btn btn-primary mb-2">Agregar</a>
+        <a href="/dashboard" class="btn btn-primary mb-2">Volver</a>
+    </div>
+  </main>
+  <%- include('sidebar.ejs', {activo: "categorias"}); %>
+
+</body>
+<script src="/public/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

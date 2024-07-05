@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <% if(activo == "dashboard"){ %>
+                <a class="nav-link active" aria-current="page" href="/dashboard">
+              <% } else{ %>  
+                <a class="nav-link" aria-current="page" href="/dashboard"> 
+             <% } %>
+              <span data-feather="dashboard"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <% if(activo == "productos"){ %>
+                <a class="nav-link active" href="/productos">
+              <% } else{ %>  
+                <a class="nav-link" href="/productos"> 
+             <% } %>
+             <span data-feather="productos"></span>
+             Productos
+           </a>
+          </li>
+          <li class="nav-item">
+            <% if(activo == "categorias"){ %>
+                <a class="nav-link active" href="/categorias">
+              <% } else{ %>  
+                <a class="nav-link" href="/categorias"> 
+             <% } %>
+              <span data-feather="categorias"></span>
+              Categorias
+            </a>
+          </li>
+          <li class="nav-item">
+            <% if(activo == "compras"){ %>
+                <a class="nav-link active" href="#">
+              <% } else{ %>  
+                <a class="nav-link" href="#"> 
+             <% } %>
+              <span data-feather="compras"></span>
+              Compras
+            </a>
+          </li>
+          <li class="nav-item">
+            <% if(activo == "favoritos"){ %>
+                <a class="nav-link active" href="#">
+              <% } else{ %>  
+                <a class="nav-link" href="#"> 
+             <% } %>    
+              <span data-feather="favoritos"></span>
+              Favoritos
+            </a>
+          </li>
+        </ul>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>categorias</title>
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/categorias.css" rel="stylesheet">
+  </head>
+  <body>
+
+<%- include('./header.ejs') %>
+
+<div class="container-fluid">
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Categorias</h1>
+    </div>
+    <div class="container-agregar">
+        <form action="/categorias/add" method="POST">
+            <div class="form-group">
+                <label for="categoria" >Agregar Categoria</label>
+                <input type="text" id="categoria" name="categoria" class="form-control " style="margin-top: 2vh;" placeholder="Insertar Aqui">
+            </div>
+            <div class="" style="margin-top: 2vh;">
+                <button class="btn btn-sucess btn-primary">Agregar</button>
+                <a href="/categorias" class="btn btn-primary">Volver</a>
+            </div>
+        </form>
+    </div>
+  </main>
+  <%- include('sidebar.ejs', {activo: "categorias"}); %>
+
+</body>
+<script src="/public/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
