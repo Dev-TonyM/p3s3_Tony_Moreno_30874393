@@ -23,7 +23,7 @@ router.post('/productos/add', (req,res)=> {
     if (!codigo || !producto || !precio || !categoria_id || !existencia_actual) {
         return res.status(500).send('Todos los campos son obligatorios');
     }
-    productos.insertar_productos(codigo, producto, precio, categoria, existencia_actual).then(() => {
+    productos.insertar_productos(codigo, producto, precio, categoria_id, existencia_actual).then(() => {
         res.redirect('/productos');
     })
     .catch(err => {
